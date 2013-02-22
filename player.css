@@ -7,17 +7,6 @@
 	margin-left: auto ;
   	margin-right: auto ;
 }
-	#playerControls { list-style: none; padding: 0px; margin: 0px }
- 
-	#playerControls li { 
-		display: block; 
-		width: 50px; 
-		height: 50px; 
-		float: left;
-		text-indent: -9999px;
-		cursor: pointer;
-	}
-
 	ul li a 
 	{
 	 height: 40px;
@@ -32,7 +21,7 @@
 		float: left;
 		white-space:nowrap;
 		margin-top: 50px;
-		margin-left: 10px;
+		margin-left: -30px;
 	}
 	
 	li
@@ -53,15 +42,9 @@
 
 	#progressBar
 	{ 
-	background-color: #ed8515; 
-	height: 32px; 
+	background-color: #fff; 
+	height: 20px; 
 	width: 0%; 
-	margin-top:90px;
-	}
-	
-	#player_play_bar { 
-	background-color: #ed8515; 
-	height: 32px; 
-	width: 0%; 
-	margin-top:90px;
+	margin-top:60px;
+	margin-left: 220px;
 	}

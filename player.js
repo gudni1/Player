@@ -114,16 +114,25 @@
 					audio.src = songs [songNumber];
 					audio.play();
 				});
+
+
 		//audio eventListener getur birt fyrir okkur progress barinn og fl.
 		audio.addEventListener('timeupdate', function(){
+
+			// How long is the track in seconds
+			var length = audio.duration;
+			
 			var secs = audio.currentTime;
 			
 			var progress = (secs / length) * 100;
 
 			//Progress barinn sem sýna á hvert lagið er komið.
-			$('#progressBar').css({'width' : progress * 2});
-		});
+			$('#progressBar').css({'width' : progress * 2 });
+
 		},false);
+
+		});
+
 	}
 	
 }) (jQuery);
