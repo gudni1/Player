@@ -48,3 +48,10 @@
 	margin-top:60px;
 	margin-left: 220px;
 	}
+
+	#slider
+	{
+		margin-left: -200px;		
+		margin-bottom: 200px;
+		position:relative;
+	}

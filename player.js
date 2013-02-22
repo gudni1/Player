@@ -62,12 +62,21 @@
 			a5.setAttribute ('class', "next");
 			LI5.appendChild (a5);
 
+			//Progress bar
 			var progressBar = document.createElement ('div');
 			progressBar.setAttribute('id', "progressBar");
 			playerContainer.appendChild(progressBar)
 
-
-
+			//Hækka og lækka
+			var slider = document.createElement ('input');
+			slider.setAttribute ('id', 'slider');
+			slider.setAttribute ('type', 'range');
+			slider.setAttribute ('min', '0');
+			slider.setAttribute ('max', '10');
+			slider.setAttribute ('value', '8');
+			playerContainer.appendChild (slider);
+		
+				
 			if(Modernizr.audio == true){
 				
 				audio.src = songs[0];
@@ -76,7 +85,11 @@
 					audio.play();
 				}	
 			}
-
+			// Take care of the volume slider
+				$('#slider').change(function(){
+					// Set the music volume based on the slider’s position
+					audio.volume = $(this).val() / 10;
+				});
 
 
 			//Play takkinn
@@ -121,7 +134,7 @@
 
 			// How long is the track in seconds
 			var length = audio.duration;
-			
+
 			var secs = audio.currentTime;
 			
 			var progress = (secs / length) * 100;
