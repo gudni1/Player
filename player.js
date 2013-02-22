@@ -62,6 +62,12 @@
 			a5.setAttribute ('class', "next");
 			LI5.appendChild (a5);
 
+			var progressBar = document.createElement ('div');
+			progressBar.setAttribute('id', "progressBar");
+			playerContainer.appendChild(progressBar)
+
+
+
 			if(Modernizr.audio == true){
 				
 				audio.src = songs[0];
@@ -70,6 +76,8 @@
 					audio.play();
 				}	
 			}
+
+
 
 			//Play takkinn
 			$(".play").click(function() {
@@ -106,8 +114,16 @@
 					audio.src = songs [songNumber];
 					audio.play();
 				});
-		});
+		//audio eventListener getur birt fyrir okkur progress barinn og fl.
+		audio.addEventListener('timeupdate', function(){
+			var secs = audio.currentTime;
+			
+			var progress = (secs / length) * 100;
 
+			//Progress barinn sem sýna á hvert lagið er komið.
+			$('#progressBar').css({'width' : progress * 2});
+		});
+		},false);
 	}
 	
 }) (jQuery);
