@@ -63,10 +63,21 @@
 			LI5.appendChild (a5);
 
 			//Progress bar
+			
+			var progressBarContainer = document.createElement ('div');
+			progressBarContainer.setAttribute ('id', 'progressBarContainer');
+			document.getElementById ('thePlayer').appendChild (progressBarContainer);
+
 			var progressBar = document.createElement ('div');
 			progressBar.setAttribute('id', "progressBar");
-			playerContainer.appendChild(progressBar)
+			playerContainer.appendChild(progressBar);
 
+			//Tíminn
+			var time = document.createElement ('div');
+			time.setAttribute ('id', 'time');
+			playerContainer.appendChild(time);
+
+			
 			//Hækka og lækka
 			var slider = document.createElement ('input');
 			slider.setAttribute ('id', 'slider');
@@ -132,15 +143,32 @@
 		//audio eventListener getur birt fyrir okkur progress barinn og fl.
 		audio.addEventListener('timeupdate', function(){
 
-			// How long is the track in seconds
+			// Lengd lagssins
 			var length = audio.duration;
 
-			var secs = audio.currentTime;
+			var sec = audio.currentTime;
 			
-			var progress = (secs / length) * 100;
+			var progress = (sec / length) * 100;
+
+			//Heildarlengd lagsins í múnútum / sekúndum
+			var tMin = parseInt (sec / 60);
+			var tSec = parseInt (sec - (tMin * 60));
+
+
+			//Audio, get total time of song
+			var totalMin = parseInt(length / 60);
+			var totalSec = parseInt(length - (totalMin * 60));
+ 
+			// If the number of seconds is less than 10, add a '0'
+			if (tSec < 10) { tSec = '0' + tSec; }
+			if (totalSec < 10) { totalSec = '0' + totalSec; }
+			if (length < 10){ totalSec = '0' + totalSec;}
 
 			//Progress barinn sem sýna á hvert lagið er komið.
 			$('#progressBar').css({'width' : progress * 2 });
+
+			$('#time').html(tMin + ':' + tSec + '/' + totalMin + ':' + totalSec);
+			//$('#time').html(tMin + ':' + tSec);	
 
 		},false);
 
