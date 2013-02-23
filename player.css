@@ -41,7 +41,6 @@
 	
 	#progressBarContainer
 	{ 
-	
 	width: 250px; 
 	height: 20px;
 	margin-top:-41px;
@@ -53,7 +52,7 @@
 	#progressBar
 	{ 
 	background-color: #fff; 
-	height: 20px; 
+	height: 22px; 
 	width: 0%; 
 	margin-top:60px;
 	margin-left: 220px;
@@ -71,4 +70,13 @@
 		float:right;
 		margin-top:-40px;
 		margin-right: 80px;
+	}
+
+	#songInfo
+	{
+	width: 300px; 
+	height: 20px;
+	margin-top: -80px;
+	margin-left: 220px;
+	
 	}

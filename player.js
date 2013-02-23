@@ -77,6 +77,10 @@
 			time.setAttribute ('id', 'time');
 			playerContainer.appendChild(time);
 
+			//Upplýsingar um hvaða lag er í spilun
+			var songInfo = document.createElement ('div');
+			songInfo.setAttribute ('id', 'songInfo');
+			playerContainer.appendChild (songInfo);
 			
 			//Hækka og lækka
 			var slider = document.createElement ('input');
@@ -169,6 +173,8 @@
 
 			$('#time').html(tMin + ':' + tSec + '/' + totalMin + ':' + totalSec);
 			//$('#time').html(tMin + ':' + tSec);	
+
+			$('#songInfo').html (songs [songNumber]);
 
 		},false);
 
