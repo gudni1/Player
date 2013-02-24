@@ -82,15 +82,26 @@
 			songInfo.setAttribute ('id', 'songInfo');
 			playerContainer.appendChild (songInfo);
 			
+
+			//Mute takkinn
+			var mute = document.createElement ('div');
+			mute.setAttribute ('id','mute');
+			var a6 = document.createElement ('a');
+			playerContainer.appendChild(mute);
+			mute.setAttribute ('href', "#");
+			mute.setAttribute ('class', "mute");
+			
+
 			//Hækka og lækka
 			var slider = document.createElement ('input');
 			slider.setAttribute ('id', 'slider');
 			slider.setAttribute ('type', 'range');
 			slider.setAttribute ('min', '0');
 			slider.setAttribute ('max', '10');
-			slider.setAttribute ('value', '8');
+			slider.setAttribute ('value', '4');
 			playerContainer.appendChild (slider);
 		
+
 				
 			if(Modernizr.audio == true){
 				
@@ -118,7 +129,8 @@
 					audio.src = songs [songNumber];
 					audio.pause();
 				});
-				
+
+			//Pause takkinn
 				$(".pause").click(function() {
 					audio.pause();
 				});
@@ -143,6 +155,10 @@
 					audio.play();
 				});
 
+			//Mute takkinn
+			$(".mute").click(function() {
+					audio.pause();
+				});
 
 		//audio eventListener getur birt fyrir okkur progress barinn og fl.
 		audio.addEventListener('timeupdate', function(){
@@ -165,8 +181,8 @@
  
 			// If the number of seconds is less than 10, add a '0'
 			if (tSec < 10) { tSec = '0' + tSec; }
-			if (totalSec < 10) { totalSec = '0' + totalSec; }
-			if (length < 10){ totalSec = '0' + totalSec;}
+			//if (totalSec < 10) { totalSec = '0' + totalSec; }
+			//if (length < 10){ totalSec = '0' + totalSec;}
 
 			//Progress barinn sem sýna á hvert lagið er komið.
 			$('#progressBar').css({'width' : progress * 2 });
