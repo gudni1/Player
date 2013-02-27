@@ -66,7 +66,8 @@
 			
 			var progressBarContainer = document.createElement ('div');
 			progressBarContainer.setAttribute ('id', 'progressBarContainer');
-			document.getElementById ('thePlayer').appendChild (progressBarContainer);
+			//document.getElementById ('thePlayer').appendChild(progressBarContainer);
+			playerContainer.appendChild(progressBarContainer);
 
 			var progressBar = document.createElement ('div');
 			progressBar.setAttribute('id', "progressBar");
@@ -80,26 +81,26 @@
 			//Upplýsingar um hvaða lag er í spilun
 			var songInfo = document.createElement ('div');
 			songInfo.setAttribute ('id', 'songInfo');
-			playerContainer.appendChild (songInfo);
+			playerContainer.appendChild(songInfo);
 			
 
 			//Mute takkinn
 			var mute = document.createElement ('div');
-			mute.setAttribute ('id','mute');
+			mute.setAttribute('id','mute');
 			var a6 = document.createElement ('a');
 			playerContainer.appendChild(mute);
-			mute.setAttribute ('href', "#");
-			mute.setAttribute ('class', "mute");
+			mute.setAttribute('href', "#");
+			mute.setAttribute('class', "mute");
 			
 
 			//Hækka og lækka
 			var slider = document.createElement ('input');
-			slider.setAttribute ('id', 'slider');
-			slider.setAttribute ('type', 'range');
-			slider.setAttribute ('min', '0');
-			slider.setAttribute ('max', '10');
-			slider.setAttribute ('value', '4');
-			playerContainer.appendChild (slider);
+			slider.setAttribute('id', 'slider');
+			slider.setAttribute('type', 'range');
+			slider.setAttribute('min', '0');
+			slider.setAttribute('max', '10');
+			slider.setAttribute('value', '4');
+			playerContainer.appendChild(slider);
 		
 
 				
@@ -111,7 +112,7 @@
 					audio.play();
 				}	
 			}
-			// Take care of the volume slider
+			// Volume takkinn
 				$('#slider').change(function(){
 					// Set the music volume based on the slider’s position
 					audio.volume = $(this).val() / 10;
@@ -128,12 +129,26 @@
 				$(".stop").click(function() {
 					audio.src = songs [songNumber];
 					audio.pause();
+
 				});
 
 			//Pause takkinn
 				$(".pause").click(function() {
 					audio.pause();
 				});
+
+
+			//Athuga hvort lagið er búið
+				$(audio).bind( "ended", function() {
+					if (songNumber == songs.length -1 ){
+						songNumber = 0;
+					}
+					else {
+						songNumber = songNumber +1;
+					} 
+					audio.src = songs [songNumber];
+					audio.play();
+				});	
 
 			//Prev takkinn
 				$(".prev").click(function() {
@@ -155,7 +170,7 @@
 					audio.play();
 				});
 
-			//Mute takkinn
+			//Mute takkinn111
 			$(".mute").click(function() {
 					audio.pause();
 				});

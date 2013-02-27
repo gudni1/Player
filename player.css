@@ -40,16 +40,13 @@
 	a.next { background: url('next.png'); }
 	
 	
-
-
-
-
 	#progressBarContainer
 	{ 
+	float: left;
 	width: 250px; 
 	height: 20px;
 	margin-top:-41px;
-	margin-left: 620px;
+	margin-left: 580px;
 	border: 1px solid #d0d0d0;
 	
 	}
@@ -92,5 +89,6 @@
 	height: 40px;
 	margin-top: 32px;
 	margin-left: 480px;	
+
 	}
 
