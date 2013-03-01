@@ -4,8 +4,7 @@
 	height: 90px;
 	padding: 8px;
 	border: 2px solid #d0d0d0;
-	margin-left: auto ;
-  	margin-right: auto ;
+
 }
 	ul li a 
 	{
@@ -39,10 +38,6 @@
 	
 	a.next { background: url('next.png'); }
 	
-	
-
-
-
 
 	#progressBarContainer
 	{ 
@@ -66,7 +61,7 @@
 	#slider
 	{
 	position:absolute;
-	left:425px;
+	left:15px;
 	top:25px;
 	}
 

@@ -12,12 +12,13 @@
     <div id="thePlayer"></div> <!-- this element will host the player!! -->
 
     <script type="text/javascript" >
-
+          
+          
          $(document).ready( function( ) {
 
               // Note: this version assumes a JavaScript array of songs, but
               // the other approach is also acceptable
-              var playlist = [  "http://baggalutur.is/mp3/Hun_for_ad_fitna.mp3",
+              var playlist = [ "http://baggalutur.is/mp3/Hun_for_ad_fitna.mp3",
                                 "http://baggalutur.is/mp3/Baggalutur_Gaerkvoldid.mp3",
                                 "http://baggalutur.is/mp3/Eg_sef_i_bilnum.mp3",
                                 "http://baggalutur.is/mp3/Baggalutur_Afram_Island.mp3"
@@ -25,9 +26,7 @@
 
             var options = {autoplay:true};
               $("#thePlayer").musicPlayer( playlist, options );
-              // Optionally, the function should accept an object containing optional values, 
-              // such as a boolean "autostart" value, i.e. if the player should start playing
-              // immediately etc.
+              
          });
 
     </script>
