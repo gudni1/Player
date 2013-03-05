@@ -124,7 +124,7 @@
 				$(".stop").click(function() {
 					audio.src = songs [songNumber];
 					audio.stop();
-					audio.src = songs[0];
+
 
 
 				});
