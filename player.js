@@ -13,7 +13,7 @@
 			
 			//Javascript býr til  html code
 			var audio = document.createElement('audio');
-			audio.setAttribute('id', 'gudni');
+			audio.setAttribute('id', '');
 			
 			var playerContainer = document.createElement ('div');
 			playerContainer.setAttribute ('id', 'playerContainer');
@@ -101,13 +101,10 @@
 			slider.setAttribute ('value', '4');
 			playerContainer.appendChild (slider);
 		
-
-				
+		
 			if(Modernizr.audio == true){
-				
 				audio.src = songs[0];
 				if ( realOptions.autoplay == true ){
-					
 					audio.play();
 				}	
 			}
@@ -120,14 +117,16 @@
 
 			//Play takkinn
 			$(".play").click(function() {
-
 					audio.play();			
 				});
 				
 			//Stopp takkinn
 				$(".stop").click(function() {
 					audio.src = songs [songNumber];
-					audio.pause();
+					audio.stop();
+					audio.src = songs[0];
+
+
 				});
 
 			//Pause takkinn
